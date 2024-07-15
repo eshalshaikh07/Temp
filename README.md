@@ -58,3 +58,62 @@ This Arduino sketch reads temperature and humidity from a DHT11 sensor and sends
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+# ESP32 Temperature Monitoring with Firebase Integration
+
+This project demonstrates how to monitor temperature and humidity using a DHT11 sensor with an ESP32 board. The sensor readings are sent to Firebase Realtime Database for remote monitoring.
+
+## Components Used
+
+- **ESP32 Development Board**
+- **DHT11 Temperature and Humidity Sensor**
+- **Firebase Realtime Database**
+
+## Pin Connections
+
+### ESP32 Pinout:
+
+markdown
+Copy code
+DHT11 Sensor:
+---------------------
+| DHT11  | ESP32     |
+|--------|-----------|
+| +      | 3.3V      |
+| OUT    | GPIO 4 (D4)|
+| -      | GND       |
+---------------------
+
+Firebase:
+-----------------------------
+| Firebase RTDB | ESP32       |
+|---------------|-------------|
+| VCC           | 3.3V/5V     |
+| GND           | GND         |
+| SCL           | GPIO 21 (D21)|
+| SDA           | GPIO 22 (D22)|
+-----------------------------
+markdown
+Copy code
+
+### Notes:
+
+- **DHT11**: Connect the VCC pin to 3.3V or 5V based on your ESP32 board's voltage, OUT to GPIO 4 (D4), and - to GND.
+- **Firebase**: Ensure correct power supply (VCC and GND) and connect SCL to GPIO 21 (D21) and SDA to GPIO 22 (D22) on ESP32.
+
+## Usage
+
+1. **Setup Firebase**:
+   - Create a Firebase project and enable Realtime Database.
+   - Note down your Firebase project details (FIREBASE_HOST, FIREBASE_AUTH) and replace them in the Arduino sketch.
+
+2. **Upload Code**:
+   - Upload the provided Arduino sketch (`esp32temp.ino`) to your ESP32 board using the Arduino IDE.
+
+3. **Monitor Data**:
+   - Open the Serial Monitor to view temperature, humidity, and heat index readings.
+   - Check Firebase Realtime Database for remote monitoring of sensor data.
+
+## Example Code
+
+```cpp
+// Your Arduino code goes here
