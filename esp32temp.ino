@@ -3,12 +3,12 @@
 #include "DHT.h"
 
 // Replace with your network credentials
-const char* ssid = "Eshal";
-const char* password = "Eshal123";
+const char* ssid = "Wifi name";
+const char* password = "Wifi psw";
 
 // Firebase Project details
-const char* FIREBASE_HOST = "realtime-693e5-default-rtdb.firebaseio.com";
-const char* FIREBASE_AUTH = "AIzaSyA-BO7RexociuIQtiwS-ymfAd6snzBSGMc";
+const char* FIREBASE_HOST = "firebase id";
+const char* FIREBASE_AUTH = "firebase api key";
 
 FirebaseData firebaseData;
 FirebaseConfig config;
